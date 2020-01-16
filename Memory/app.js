@@ -13,6 +13,12 @@ let num3 = 0;
 let counter = 0;
 
 
+button.addEventListener("click", function(e) {
+    e.preventDefault();
+    container.classList.remove("hidden");
+    startGame();
+})
+
 function startGame() {
     for(let i = 1; i<=10; i++) {
       while(arrayImg.indexOf(num1) !== -1 || arrayBlock.indexOf(num2) !== -1 || arrayBlock.indexOf(num3) !== -1 || num2 === num3) {
@@ -34,11 +40,7 @@ function startGame() {
 
 
 
-button.addEventListener("click", function(e) {
-    e.preventDefault();
-    container.classList.remove("hidden");
-    startGame();
-})
+
 
 blocks.forEach(el => {
     el.addEventListener("click", (e) => {
