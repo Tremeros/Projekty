@@ -18,25 +18,26 @@ class Bar extends React.Component {
       },
       series: [
        
-      ],
-      text: []
+      ]
     };
   }
 
-  test = (e) => {
-    e.preventDefault();
-    this.arr = [...this.state.series, {name: "series-1", data: this.state.datas}]
-    this.setState({series: this.arr})
-   console.log(this.state.series);
-  }
+  
    onChangeHandle = (e) => {
      this.setState({input: e.target.value});
      console.log(this.state.input);
    }
 
    addData = () => {
-     this.arr = [...this.state.datas, this.state.input];
-     this.setState({datas: this.arr})
+    this.arr = [...this.state.datas, this.state.input];
+    this.setState({datas: this.arr, input: ""});
+    
+   }
+
+   generateChart =(e) => {
+     e.preventDefault();
+     this.arr2 = [...this.state.series, {name: "series-2", data: this.state.datas}]
+   this.setState({series: this.arr2, datas: []})
    }
 
   render() {
@@ -54,8 +55,13 @@ class Bar extends React.Component {
         </div>
         <input type="text" value={this.state.input} onChange={this.onChangeHandle}></input>
         <button className="btn btn-primary" onClick={this.addData}>Add data</button>
-        <button className="btn btn-primary" onClick={this.test}>Test</button>
+        <button className="btn btn-primary" onClick={this.generateChart}>Generate</button>
         <div>{this.state.text}</div>
+        <ul>
+          {this.state.datas.map((el, index) => {
+            return <li key={index}>{el}</li>
+          })}
+        </ul>
       </div>
     );
   }
