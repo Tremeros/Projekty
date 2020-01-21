@@ -1,14 +1,18 @@
 import React from 'react';
 import Chart from "react-apexcharts";
+import "./style.css";
 
 class Bar extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      size: "700",
       input: "",
       datas: [],
+      categories: [],
       options: {
+        
         chart: {
           id: "basic-bar"
         },
@@ -49,17 +53,19 @@ class Bar extends React.Component {
               options={this.state.options}
               series={this.state.series}
               type="bar"
-              width="500"
+              width={this.state.size}
             />
           </div>
         </div>
         <input type="text" value={this.state.input} onChange={this.onChangeHandle}></input>
-        <button className="btn btn-primary" onClick={this.addData}>Add data</button>
-        <button className="btn btn-primary" onClick={this.generateChart}>Generate</button>
+        <div className="buttons">
+          <button className="btn btn-primary" onClick={this.addData}>Add data</button>
+          <button className="btn btn-primary" onClick={this.generateChart}>Generate</button>
+        </div>
         <div>{this.state.text}</div>
-        <ul>
+        <ul className="list-group">
           {this.state.datas.map((el, index) => {
-            return <li key={index}>{el}</li>
+            return <li key={index} className="list-group-item">{el}</li>
           })}
         </ul>
       </div>
