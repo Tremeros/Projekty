@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css';
 import { HashRouter, Route, Switch, Link } from "react-router-dom";
-import Contacts from "./contacts";
+import Contacts from "../containers/Contacts";
 
 
  class Main extends React.Component {
@@ -27,11 +27,7 @@ import Contacts from "./contacts";
            <Link className="sidenav" to="/">Dokumenty</Link>
          </div>
          <div className="main">
-         <HashRouter>
-           <Switch>
-             <Route path="/contacts" component={Contacts}/>
-           </Switch>
-         </HashRouter>
+           <Contacts/>
          </div>
        </div>
        </div>
