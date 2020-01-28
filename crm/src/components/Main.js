@@ -13,26 +13,27 @@ import Contacts from "../containers/Contacts";
      return (
 
        <div>
-       <div className="navbar">
-         <Link className="navLink" to="/">Strona główna</Link>
-         <Link className="navLink" to="/">O programie</Link>
-         <Link className="navLink" to="/">Pomoc</Link>
-         <Link className="navLink login" to="/">Zaloguj</Link>
-       </div>
-       <div className="header">
-         <div className="background"><h1>System CRM</h1></div>
-       </div>
-       <div className="container">
-         <div className="sidebar">
-           <Link className="sidenav" to="/Contacts">Kontakty</Link>
-           <Link className="sidenav" to="/">Statystyki</Link>
-           <Link className="sidenav" to="/">Terminarz</Link>
-           <Link className="sidenav" to="/">Dokumenty</Link>
+         <div className="navbar">
+           <Link className="navLink" to="/">Strona główna</Link>
+           <Link className="navLink" to="/">O programie</Link>
+           <Link className="navLink" to="/">Pomoc</Link>
+           <Link className="navLink login" to="/">Zaloguj</Link>
          </div>
-         <div className="main">
-           <Contacts/>
+         <div className="header">
+           <div className="background"><h1>System CRM</h1></div>
          </div>
-       </div>
+         <div className="container">
+           <div className="sidebar">
+             <Link className="sidenav" to="contacts">Kontakty</Link>
+             <Link className="sidenav" to="/">Statystyki</Link>
+             <Link className="sidenav" to="/">Terminarz</Link>
+             <Link className="sidenav" to="/">Dokumenty</Link>
+           </div>
+           <div className="main">
+
+             {this.props.children}
+           </div>
+         </div>
        </div>
      )
    }

@@ -1,5 +1,6 @@
 import React from "react";
 import '../App.css';
+import Main from "./Main";
 
 
  class Contacts extends React.Component {
@@ -54,6 +55,9 @@ import '../App.css';
 
    render() {
      return (
+
+
+    <Main>
        <div className="contacts">
          <h2>Lista kontaktów</h2>
          <button className="newContact" onClick={this.addContact}>Nowy kontakt</button>
@@ -85,6 +89,7 @@ import '../App.css';
           })}
           </div>
        </div>
+      </Main>
      )
    }
  }
