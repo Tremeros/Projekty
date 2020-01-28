@@ -13,7 +13,7 @@ class Welcome extends React.Component {
    return (
      <div>
        <Main>
-         {this.state.welcome}
+         <h2>Witaj! Jesteś zalogowany jako użytkownik</h2>
        </Main>
      </div>
    )

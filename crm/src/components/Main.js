@@ -25,9 +25,9 @@ import Contacts from "../containers/Contacts";
          <div className="container">
            <div className="sidebar">
              <Link className="sidenav" to="contacts">Kontakty</Link>
-             <Link className="sidenav" to="/">Statystyki</Link>
-             <Link className="sidenav" to="/">Terminarz</Link>
-             <Link className="sidenav" to="/">Dokumenty</Link>
+             <Link className="sidenav" to="/stats">Statystyki</Link>
+             <Link className="sidenav" to="/timetable">Terminarz</Link>
+             <Link className="sidenav" to="/documents">Dokumenty</Link>
            </div>
            <div className="main">
 
