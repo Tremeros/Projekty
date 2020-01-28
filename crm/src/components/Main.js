@@ -5,6 +5,9 @@ import Contacts from "../containers/Contacts";
 
 
  class Main extends React.Component {
+   constructor(props) {
+     super(props);
+   }
 
    render() {
      return (
@@ -21,7 +24,7 @@ import Contacts from "../containers/Contacts";
        </div>
        <div className="container">
          <div className="sidebar">
-           <Link className="sidenav" to="/contacts">Kontakty</Link>
+           <Link className="sidenav" to="/Contacts">Kontakty</Link>
            <Link className="sidenav" to="/">Statystyki</Link>
            <Link className="sidenav" to="/">Terminarz</Link>
            <Link className="sidenav" to="/">Dokumenty</Link>

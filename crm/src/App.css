@@ -63,12 +63,12 @@ h1 {
 .main {
   grid-area: main;
   height: 700px;
-  background-color: lightgray;
+  background-color: whitesmoked;
   display: flex;
   justify-content: center;
 }
 
-.main span {
+.h2 {
   font-size: 50px;
 }
 
@@ -92,10 +92,31 @@ h1 {
 }
 
 .contacts {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin: 5px;
+}
+
+.contactListBar {
+  width: 100%;
+  height: 50px;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .newContact {
@@ -103,4 +124,25 @@ h1 {
     height: 50px;
     background-color: rgba(123, 239, 178, 1);
     border-radius: 10px;
+}
+
+.contactsList {
+  width: 100%;
+}
+
+.contact {
+  width: 100%;
+  height: 50px;
+  background-color: grey;
+  margin: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact:nth-of-type(2n) {
+  background-color: lightgrey;
+}
+.contactName {
+  margin-left: 10px;
 }

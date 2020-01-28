@@ -13,6 +13,7 @@ function App() {
     <HashRouter>
       <Switch>
         <Route exact path="/" component={Main}/>
+
         <Route component={NotFound}/>
       </Switch>
     </HashRouter>

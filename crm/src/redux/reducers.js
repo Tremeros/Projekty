@@ -1,8 +1,9 @@
-import {ADD_CONTACT, CONTACT_FORM} from "./actions";
+import {ADD_CONTACT, CONTACT_FORM, LOAD_CONTACTS }from "./actions";
 import {combineReducers} from "redux";
 
 
 const initialState = {
+  login: false,
   newContactForm: false,
   contacts: []
 }
@@ -15,6 +16,9 @@ const contacts = (state=initialState, action) => {
     case ADD_CONTACT:
     const contact = [...state.contacts, action.payload];
     return {...state, contacts: contact, newContactForm: false};
+
+    case LOAD_CONTACTS:
+    return {...state, contacts: action.payload};
 
     default:
     return state;
