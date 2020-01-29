@@ -1,15 +1,20 @@
-import {ADD_CONTACT, CONTACT_FORM, LOAD_CONTACTS }from "./actions";
+import {ADD_CONTACT, CONTACT_FORM, LOAD_CONTACTS, LOGIN, SHOW_DETAILS }from "./actions";
 import {combineReducers} from "redux";
 
 
 const initialState = {
-  login: false,
+  selectedContact: null,
+  contactDetails: false,
+  login: true,
   newContactForm: false,
   contacts: []
 }
 
 const contacts = (state=initialState, action) => {
   switch(action.type) {
+    case LOGIN:
+    return {...state, login: !state.login}
+
     case CONTACT_FORM:
     return {...state, newContactForm: true};
 
@@ -19,6 +24,16 @@ const contacts = (state=initialState, action) => {
 
     case LOAD_CONTACTS:
     return {...state, contacts: action.payload};
+
+    case SHOW_DETAILS:
+    const contacts = [...state.contacts];
+    const selected = contacts.filter(el => {
+      if(el.id == action.payload) {
+        return el;
+      }
+    })
+    return {...state, contactDetails: !state.contactDetails, selectedContact: selected };
+
 
     default:
     return state;

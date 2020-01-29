@@ -113,11 +113,20 @@ input {
 .contactListBar {
   width: 100%;
   height: 50px;
-  background-color: lightgrey;
+  margin-bottom: 10px;
+  background-color: grey;
+  border: 1px solid black;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
+
+.contactListBar span {
+  margin-right: 250px;
+  margin-left: 10px;
+}
+
+
 
 .newContact {
     width: 200px;
@@ -133,15 +142,31 @@ input {
 .contact {
   width: 100%;
   height: 50px;
-  background-color: grey;
+  background-color: white;
+  border:1px solid gray;
   margin: 1px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
+.contact:hover {
+  background-color: gray;
+}
+
+.contact div {
+  height: 100%;
+  width: 330px;
+  display: flex;
+  align-items: center;
+}
+
 .contact:nth-of-type(2n) {
   background-color: lightgrey;
+}
+
+.contact:nth-of-type(2n):hover {
+  background-color: gray;
 }
 .contactName {
   margin-left: 10px;

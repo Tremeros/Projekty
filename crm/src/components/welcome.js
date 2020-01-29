@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "./Main";
+import Main from "../containers/Main";
 
 class Welcome extends React.Component {
   constructor(props) {

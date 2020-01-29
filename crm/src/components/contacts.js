@@ -1,6 +1,7 @@
 import React from "react";
 import '../App.css';
-import Main from "./Main";
+import Main from "../containers/Main";
+import Details from "../containers/Details";
 
 
  class Contacts extends React.Component {
@@ -41,6 +42,7 @@ import Main from "./Main";
    confirm = (e) => {
      e.preventDefault();
      const newContact = {
+       id: this.props.contactsList.length,
        name: this.state.name,
        companyName: this.state.companyName,
        phoneNumber: this.state.phoneNumber,
@@ -48,9 +50,15 @@ import Main from "./Main";
        date: `${this.state.date.getDate()}.${this.state.date.getMonth() + 1}.${this.state.date.getFullYear()}`
      }
      this.props.confirmContact(newContact);
-     this.setState({name: "", phoneNumber: "", email: ""});
+     this.setState({name: "", companyName: "", phoneNumber: "", email: ""});
      console.log(this.props.contactsList);
 
+   }
+
+   show = (e) => {
+     e.preventDefault();
+     this.props.details(e.target.parentElement.id);
+     console.log(e.target.parentElement.id);
    }
 
    render() {
@@ -58,7 +66,7 @@ import Main from "./Main";
 
 
     <Main>
-       <div className="contacts">
+      {(this.props.contactDetails) ? <Details/> : <div className="contacts">
          <h2>Lista kontaktów</h2>
          <button className="newContact" onClick={this.addContact}>Nowy kontakt</button>
          <div className="contactListBar">
@@ -78,17 +86,17 @@ import Main from "./Main";
           <div className="contactsList">
           {this.props.contactsList.map((el, index) => {
             return (
-              <div key={index} className="contact">
-                         <span className="contactName">{el.name}</span>
-                         <span className="contactName">{el.companyName}</span>
-                         <span className="contactName">{el.phoneNumber}</span>
-                         <span className="contactName">{el.email}</span>
-                         <span className="contactName">{el.date}</span>
+              <div key={index} id={el.id} className="contact" onClick={this.show}>
+                         <div><span className="contactName">{el.name}</span></div>
+                         <div><span className="contactName">{el.companyName}</span></div>
+                         <div><span className="contactName">{el.phoneNumber}</span></div>
+                         <div><span className="contactName">{el.email}</span></div>
+                         <div><span className="contactName">{el.date}</span></div>
                      </div>
             )
           })}
           </div>
-       </div>
+       </div>}
       </Main>
      )
    }
