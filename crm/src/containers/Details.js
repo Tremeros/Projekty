@@ -1,14 +1,16 @@
 import { connect } from "react-redux";
 import Details from "../components/Details";
-import {showDetails} from "../redux/actions";
+import {showDetails, addNote} from "../redux/actions";
 
 
 const mapState = (state) => ({
-  contact: state.selectedContact[0]
+  contact: state.selectedContact[0],
+  notesList: state.contactsNotes
 })
 
 const mapDispatch = (dispatch) => ({
-  back: () => dispatch(showDetails())
+  back: () => dispatch(showDetails()),
+  addContactNote: (note) => dispatch(addNote(note))
 })
 
 const connectedDetails = connect(mapState, mapDispatch)(Details);

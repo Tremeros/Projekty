@@ -10,8 +10,11 @@ import Details from "../containers/Details";
      this.state = {
        name: "",
        companyName: "",
+       nip: "",
+       regon: "",
        phoneNumber: "",
        email: "",
+       www: "",
        date: new Date()
      }
    }
@@ -21,12 +24,15 @@ import Details from "../containers/Details";
      console.log(list);
      console.log(this.props.newContact);
      let aValue = JSON.parse(window.localStorage.getItem('contacts'));
+     let nValue = JSON.parse(window.localStorage.getItem('notes'));
      (aValue && this.props.loadList(aValue));
+     (nValue && this.props.loadNotesList(nValue));
      console.log(aValue);
    }
 
    componentDidUpdate() {
       localStorage.setItem('contacts', JSON.stringify(this.props.contactsList));
+      localStorage.setItem('notes', JSON.stringify(this.props.notesList));
    }
 
    addContact = (e) => {
@@ -45,9 +51,13 @@ import Details from "../containers/Details";
        id: this.props.contactsList.length,
        name: this.state.name,
        companyName: this.state.companyName,
+       nip: this.state.nip,
+       regon: this.state.regon,
        phoneNumber: this.state.phoneNumber,
        email: this.state.email,
-       date: `${this.state.date.getDate()}.${this.state.date.getMonth() + 1}.${this.state.date.getFullYear()}`
+       www: this.state.www,
+       date: `${this.state.date.getDate()}.${this.state.date.getMonth() + 1}.${this.state.date.getFullYear()}`,
+       notes: []
      }
      this.props.confirmContact(newContact);
      this.setState({name: "", companyName: "", phoneNumber: "", email: ""});
@@ -77,10 +87,13 @@ import Details from "../containers/Details";
             <span>Data utworzenia</span>
          </div>
          {this.props.newContact && <form className="contactForm">
-           <span>Imie: <input type="text" name="name" value={this.state.name} onChange={this.onChangeHndle}/></span>
+           <span>Imie i nazwisko: <input type="text" name="name" value={this.state.name} onChange={this.onChangeHndle}/></span>
            <span>Nazwa firmy: <input type="text" name="companyName" value={this.state.companyName} onChange={this.onChangeHndle}/></span>
+           <span>NIP: <input type="text" name="nip" value={this.state.nip} onChange={this.onChangeHndle}/></span>
+           <span>REGON: <input type="text" name="regon" value={this.state.regon} onChange={this.onChangeHndle}/></span>
            <span>Telefon: <input type="text" name="phoneNumber" value={this.state.phoneNumber} onChange={this.onChangeHndle}/></span>
            <span>Email: <input type="email" name="email" value={this.state.email} onChange={this.onChangeHndle}/></span>
+           <span>WWW: <input type="text" name="www" value={this.state.www} onChange={this.onChangeHndle}/></span>
            <button onClick={this.confirm}>Dodaj</button>
            </form>}
           <div className="contactsList">

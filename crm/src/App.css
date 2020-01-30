@@ -110,6 +110,30 @@ input {
   margin: 5px;
 }
 
+.contactForm span:nth-of-type(2) input {
+  margin-left: 25px;
+}
+
+.contactForm span:nth-of-type(3) input {
+  margin-left: 89px;
+}
+
+.contactForm span:nth-of-type(4) input {
+  margin-left: 60px;
+}
+
+.contactForm span:nth-of-type(5) input {
+  margin-left: 60px;
+}
+
+.contactForm span:nth-of-type(6) input {
+  margin-left: 75px;
+}
+
+.contactForm span:nth-of-type(7) input {
+  margin-left: 69px;
+}
+
 .contactListBar {
   width: 100%;
   height: 50px;
