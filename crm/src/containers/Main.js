@@ -1,14 +1,17 @@
 import { connect } from "react-redux";
 import Main from "../components/Main";
-import {login} from "../redux/actions";
+import {loginForm, registrationForm} from "../redux/actions";
 
 
 const mapState = (state) => ({
-  logedIn: state.login
+  logedIn: state.login,
+  loginFormActive: state.loginForm,
+  registryFormActive: state.registryForm
 })
 
 const mapDispatch = (dispatch) => ({
-  login: () => dispatch(login())
+  loginForm: () => dispatch(loginForm()),
+  registrationForm: () => dispatch(registrationForm())
 })
 
 

@@ -1,20 +1,38 @@
-import {ADD_CONTACT, CONTACT_FORM, LOAD_CONTACTS, LOGIN, SHOW_DETAILS, ADD_NOTE, LOAD_NOTES }from "./actions";
+import {ADD_CONTACT, CONTACT_FORM, LOAD_CONTACTS, LOGIN, LOGIN_FORM, REGISTRATION_FORM, REGISTRATION,  SHOW_DETAILS, ADD_NOTE, LOAD_NOTES }from "./actions";
 import {combineReducers} from "redux";
 
 
 const initialState = {
+  users: [],
   contactsNotes: [],
   selectedContact: null,
   contactDetails: false,
-  login: true,
+  loginForm: false,
+  login: false,
+  registryForm: false,
+  registration: false,
   newContactForm: false,
   contacts: []
 }
 
 const contacts = (state=initialState, action) => {
   switch(action.type) {
+    case LOGIN_FORM:
+    if(state.login) {
+      return {...state, loginForm: false, login: false}
+    } else {
+      return {...state, loginForm: true, login: false}
+    }
+
     case LOGIN:
-    return {...state, login: !state.login}
+    return {...state, loginForm: false, login: true}
+
+    case REGISTRATION_FORM:
+    return {...state, registryForm: true, login: false}
+
+    case REGISTRATION:
+    const updateUsers = [...state.users, action.payload];
+    return {...state, users: updateUsers};
 
     case CONTACT_FORM:
     return {...state, newContactForm: true};

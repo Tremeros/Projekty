@@ -2,6 +2,8 @@ import React from "react";
 import '../App.css';
 import { HashRouter, Route, Switch, Link } from "react-router-dom";
 import Contacts from "../containers/Contacts";
+import LoginForm from "../containers/LoginForm";
+import RegistryForm from "../containers/RegistrationForm";
 
 
 
@@ -12,7 +14,12 @@ import Contacts from "../containers/Contacts";
 
    log = (e) => {
      e.preventDefault();
-     this.props.login();
+     this.props.loginForm();
+   }
+
+   registration = (e) => {
+     e.preventDefault();
+     this.props.registrationForm();
    }
 
    render() {
@@ -23,7 +30,8 @@ import Contacts from "../containers/Contacts";
            <Link className="navLink" to="/">Strona główna</Link>
            <Link className="navLink" to="/">O programie</Link>
            <Link className="navLink" to="/">Pomoc</Link>
-           <Link onClick={this.log} className="navLink login" to="/">Zaloguj</Link>
+           <Link onClick={this.log} className="navLink login" to="/">{this.props.logedIn ? "Wyloguj" : "Zaloguj"}</Link>
+           <Link onClick={this.registration} className="navLink" to="/">Rejestracja</Link>
          </div>
          <div className="header">
            <div className="background"><h1>System CRM</h1></div>
@@ -36,8 +44,11 @@ import Contacts from "../containers/Contacts";
              <Link className="sidenav" to="/documents">Dokumenty</Link>
            </div>
            <div className="main">
-
-             {(this.props.logedIn) ? this.props.children : <h2>Zaloguj sie</h2>}
+             <div>
+                {this.props.logedIn ? this.props.children : <h2>Zaloguj sie</h2>}
+                {this.props.loginFormActive && <LoginForm/>}
+                {this.props.registryFormActive && <RegistryForm/>}
+             </div>
            </div>
          </div>
        </div>
