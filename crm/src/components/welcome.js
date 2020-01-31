@@ -13,7 +13,7 @@ class Welcome extends React.Component {
    return (
      <div>
        <Main>
-         <h2>Witaj! Jesteś zalogowany jako użytkownik</h2>
+         <h2>{this.props.logedUser && `Witaj, jesteś zalogowany jako ${this.props.logedUser.imie} ${this.props.logedUser.nazwisko}`}</h2>
        </Main>
      </div>
    )

@@ -22,6 +22,12 @@ import RegistryForm from "../containers/RegistrationForm";
      this.props.registrationForm();
    }
 
+   componentDidMount()  {
+     let uValue = JSON.parse(window.localStorage.getItem('users'));
+     (uValue && this.props.loadUsersList(uValue));
+     console.log(uValue);
+   }
+
    render() {
      return (
 

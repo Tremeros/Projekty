@@ -2,11 +2,15 @@ import { connect } from "react-redux";
 import LoginForm from "../components/LoginForm";
 import {login} from "../redux/actions";
 
+const mapState = (state) => ({
+  users: state.users
+})
+
 const mapDispatch = (dispatch) => ({
-  confirmLogin: () => dispatch(login())
+  confirmLogin: (user) => dispatch(login(user))
 })
 
 
-const connectedLoginForm = connect(null, mapDispatch)(LoginForm);
+const connectedLoginForm = connect(mapState, mapDispatch)(LoginForm);
 
 export default connectedLoginForm;

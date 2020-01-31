@@ -36,6 +36,8 @@ class RegistryForm extends React.Component {
     this.setState({login: "", hasło: "", imie: "", nazwisko: "", nazwa: "", stanowisko: ""});
   }
 
+
+
 componentDidUpdate = () => {
   localStorage.setItem('users', JSON.stringify(this.props.usersList));
   console.log(this.props.usersList);

@@ -5,7 +5,7 @@ import './App.css';
 import Main from "./containers/Main";
 import NotFound from "./components/NotFound";
 import Contacts from "./containers/Contacts";
-import Welcome from "./components/welcome";
+import Welcome from "./containers/Welcome";
 import Stats from "./components/Stats";
 import Timetable from "./components/Timetable";
 import Documents from "./components/Documents";

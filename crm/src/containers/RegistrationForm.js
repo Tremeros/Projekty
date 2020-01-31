@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import RegistryForm from "../components/RegistryForm";
-import {registration, asyncReg} from "../redux/actions";
+import {registration, asyncReg, loadUsers} from "../redux/actions";
 
 
 const mapState = (state) => ({
@@ -9,6 +9,7 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   register: (user) => dispatch(registration(user))
+
 })
 
 
