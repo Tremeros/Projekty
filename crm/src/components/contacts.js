@@ -23,16 +23,18 @@ import Details from "../containers/Details";
      const list = this.props.contactsList;
      console.log(list);
      console.log(this.props.newContact);
-     let aValue = JSON.parse(window.localStorage.getItem('contacts'));
-     let nValue = JSON.parse(window.localStorage.getItem('notes'));
-     (aValue && this.props.loadList(aValue));
-     (nValue && this.props.loadNotesList(nValue));
-     console.log(aValue);
-   }
+
+     let contacts = JSON.parse(window.localStorage.getItem('contacts'));
+     contacts && this.props.loadList(contacts);
+
+     }
 
    componentDidUpdate() {
+
+
       localStorage.setItem('contacts', JSON.stringify(this.props.contactsList));
       localStorage.setItem('notes', JSON.stringify(this.props.notesList));
+
    }
 
    addContact = (e) => {
@@ -48,6 +50,7 @@ import Details from "../containers/Details";
    confirm = (e) => {
      e.preventDefault();
      const newContact = {
+       user: this.props.currentUser.login,
        id: this.props.contactsList.length,
        name: this.state.name,
        companyName: this.state.companyName,

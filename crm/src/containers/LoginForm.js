@@ -1,13 +1,16 @@
 import { connect } from "react-redux";
 import LoginForm from "../components/LoginForm";
-import {login} from "../redux/actions";
+import {login, loadContacts} from "../redux/actions";
 
 const mapState = (state) => ({
-  users: state.users
+  users: state.users,
+  currentUser: state.currentUser,
+  contactsList: state.contacts
 })
 
 const mapDispatch = (dispatch) => ({
-  confirmLogin: (user) => dispatch(login(user))
+  confirmLogin: (user) => dispatch(login(user)),
+  loadList: (list) => dispatch(loadContacts(list)),
 })
 
 

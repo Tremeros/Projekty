@@ -6,7 +6,9 @@ const mapState = (state) => ({
   contactsList: state.contacts,
   notesList: state.contactsNotes,
   newContact: state.newContactForm,
-  contactDetails: state.contactDetails
+  contactDetails: state.contactDetails,
+  currentUser: state.currentUser,
+  loggedIn: state.login
 })
 
 const mapDispatch = (dispatch) => ({
