@@ -1,0 +1,100 @@
+.details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.details__data {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes {
+  height: 100%;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notes__list {
+  height: 100%;
+  width: 100%;
+}
+
+.notes__list__element {
+  width: 100%;
+  height: 50px;
+  background-color: lightgray;
+  margin: 10px 0;
+  border: 1px solid black;
+}
+
+.notes h3 {
+  margin-top: 30px;
+}
+
+.notes button {
+  width: 100px;
+  height: 30px;
+}
+
+button {
+  width: 100px;
+    height: 50px;
+    margin: 10px 0;
+}
+
+.contactDetails {
+  height: 100%;
+  width: 800px;
+  border-radius: 20px;
+}
+
+.contactDetails div {
+  padding: 10px;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactDetails div span {
+  color: black;
+}
+
+.contactDetails__header {
+  width: 100%;
+  height: 60px;
+  background-color: green;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.contactDetails__contact {
+  width: 100%;
+  height: 60px;
+  background-color: green;
+  text-align: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+h3 {
+  color: white;
+  font-size: 20px;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginButton {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  align-self: center;
+}
