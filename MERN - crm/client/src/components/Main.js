@@ -17,6 +17,11 @@ import RegistryForm from "../containers/RegistrationForm";
      this.props.loginForm();
    }
 
+   logOut = (e) => {
+     e.preventDefault();
+     this.props.logout();
+   }
+
    registration = (e) => {
      e.preventDefault();
      this.props.registrationForm();
@@ -24,25 +29,32 @@ import RegistryForm from "../containers/RegistrationForm";
 
    componentDidMount()  {
 
-     this.props.loadUsersList()
-     // let uValue = JSON.parse(window.localStorage.getItem('users'));
-     // (uValue && this.props.loadUsersList(uValue));
-     // console.log(uValue);
+     this.props.loadUsersList();
+     // this.props.loadContactsList();
    }
+
+  
 
    render() {
      return (
 
        <div>
-         <div className="navbar">
-           <Link className="navLink" to="/">Strona główna</Link>
-           <Link className="navLink" to="/">O programie</Link>
-           <Link className="navLink" to="/">Pomoc</Link>
-           <Link onClick={this.log} className="navLink login" to="/">{this.props.logedIn ? "Wyloguj" : "Zaloguj"}</Link>
-           <Link onClick={this.registration} className="navLink" to="/">Rejestracja</Link>
-         </div>
+
+          <div className="navbar">
+               <div className="label">Menu</div>
+               <div className="spacer"></div>
+               <Link className="navLink" to="/"><span>Strona główna</span></Link>
+               <Link className="navLink" to="/"><span>O programie</span></Link>
+               <Link className="navLink" to="/"><span>Pomoc</span></Link>
+               <Link onClick={!this.props.logedIn ? this.log : this.logOut} className="navLink login" to="/"><span>{this.props.logedIn ? "Wyloguj" : "Zaloguj"}</span></Link>
+               <Link onClick={this.registration} className="navLink" to="/"><span>Rejestracja</span></Link>
+           </div>
          <div className="header">
-           <div className="background"><h1>System CRM</h1></div>
+           <div className="background">
+             <div className="headerLine_1"></div>
+             <h1>System CRM</h1>
+             <div className="headerLine_2"></div>
+           </div>
          </div>
          <div className="container">
            <div className="sidebar">
@@ -52,10 +64,13 @@ import RegistryForm from "../containers/RegistrationForm";
              <Link disabled={true} className="sidenav" to="/documents">Dokumenty</Link>
            </div>
            <div className="main">
-             <div>
-                {this.props.logedIn ? this.props.children : <h2>Zaloguj sie</h2>}
-                {this.props.loginFormActive && <LoginForm/>}
+             <div className="logIn">
+                {this.props.logedIn ? this.props.children : <div>
+                  <h2>{this.props.registryFormActive ? "Zarejestruj się" : "Zaloguj się"}</h2>
+
+                </div>}
                 {this.props.registryFormActive && <RegistryForm/>}
+                {this.props.loginFormActive && <LoginForm/>}
              </div>
            </div>
          </div>

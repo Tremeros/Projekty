@@ -92,6 +92,11 @@ h3 {
   flex-direction: column;
 }
 
+.registrationForm {
+  display: flex;
+  flex-direction: column;
+}
+
 .loginButton {
   width: 100px;
   height: 30px;

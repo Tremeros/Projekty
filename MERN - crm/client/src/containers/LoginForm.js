@@ -10,7 +10,7 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   confirmLogin: (user) => dispatch(login(user)),
-  loadList: (list) => dispatch(loadContacts(list)),
+  loadList: () => dispatch(loadContacts()),
 })
 
 

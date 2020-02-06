@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Details from "../components/Details";
-import {showDetails, addNote} from "../redux/actions";
+import {showDetails, addNote, deleteContact, loadContacts} from "../redux/actions";
 
 
 const mapState = (state) => ({
@@ -10,6 +10,8 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   back: () => dispatch(showDetails()),
+  delete: (id) => dispatch(deleteContact(id)),
+  loadList: () => dispatch(loadContacts()),
   addContactNote: (note) => dispatch(addNote(note))
 })
 

@@ -38,15 +38,12 @@ class RegistryForm extends React.Component {
 
 
 
-componentDidUpdate = () => {
-  localStorage.setItem('users', JSON.stringify(this.props.usersList));
-  console.log(this.props.usersList);
-}
+
 
   render() {
     return (
       <div>
-          <form className="loginForm">
+          <form className="registrationForm">
             <label>
               Login:
               <input name="login" type="text" value={this.state.login} onChange={this.onChangeHandle}/>
@@ -71,7 +68,7 @@ componentDidUpdate = () => {
               Stanowisko:
               <input name="stanowisko" type="text" value={this.state.stanowisko} onChange={this.onChangeHandle}/>
             </label>
-            <button className="loginButton"  onClick={this.handleNameChange}>Zaloguj</button>
+            <button className="loginButton"  onClick={this.handleNameChange}>Zarejestruj</button>
           </form>
        </div>
     )

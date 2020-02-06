@@ -5,9 +5,9 @@ import "./components.css";
 class Details extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      id: this.props.contact.id
-    }
+      this.state = {
+        id: this.props.contact._id
+      }
   }
 
   addnote = (e) => {
@@ -21,6 +21,12 @@ class Details extends React.Component {
     console.log(this.state.id);
   }
 
+  removeContact = (e) => {
+    e.preventDefault();
+    this.props.delete(this.state.id);
+    this.props.loadList();
+  }
+
   render() {
     return (
 
@@ -28,6 +34,7 @@ class Details extends React.Component {
           <div className="details__data">
           <h2>Szczegóły kontaktu</h2>
           <button onClick={this.props.back}>Powrót</button>
+          <button onClick={this.removeContact}>Usuń kontakt</button>
             <div className="contactDetails">
               <div className="contactDetails__header">
                 <h3>Dane podstawowe</h3>
@@ -39,8 +46,8 @@ class Details extends React.Component {
               <div className="contactDetails__contact"><h3>Dane kontaktowe</h3></div>
               <div>telefon: <span>{this.props.contact && this.props.contact.phoneNumber}</span></div>
               <div>email: <span>{this.props.contact && this.props.contact.email}</span></div>
-              <div>WWW: <a href={this.props.contact.www} >{this.props.contact && this.props.contact.www}</a></div>
-              <div>{this.state.id}</div>
+              <div>www: <a href={this.props.contact && this.props.contact.www} >{this.props.contact && this.props.contact.www}</a></div>
+
             </div>
           </div>
 

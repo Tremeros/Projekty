@@ -19,7 +19,13 @@ import Details from "../containers/Details";
      }
    }
 
-  
+  // componentDidMount() {
+  //   this.props.loadList();
+  // }
+
+  // componentDidUpdate() {
+  //   this.props.loadList();
+  // }
 
    addContact = (e) => {
      e.preventDefault();
@@ -55,7 +61,7 @@ import Details from "../containers/Details";
    show = (e) => {
      e.preventDefault();
      this.props.details(e.target.parentElement.id);
-     console.log(e.target.parentElement.id);
+     console.log(e.target.parentElement._id);
    }
 
    render() {
@@ -86,7 +92,7 @@ import Details from "../containers/Details";
           <div className="contactsList">
           {this.props.contactsList.map((el, index) => {
             return (
-              <div key={index} id={el.id} className="contact" onClick={this.show}>
+              <div key={index} id={el._id} className="contact" onClick={this.show}>
                          <div><span className="contactName">{el.name}</span></div>
                          <div><span className="contactName">{el.companyName}</span></div>
                          <div><span className="contactName">{el.phoneNumber}</span></div>

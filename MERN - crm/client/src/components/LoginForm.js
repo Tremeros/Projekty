@@ -20,10 +20,11 @@ class LoginForm extends React.Component {
     e.preventDefault();
     console.log(this.props.users);
     this.props.users.forEach(el => {
-      if(el.login == this.state.login && el.password == this.state.password) {
+      if(el.login === this.state.login && el.password === this.state.password) {
         return this.props.confirmLogin(el);
       }
     });
+    this.props.loadList();
   }
 
  render() {

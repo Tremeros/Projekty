@@ -14,7 +14,7 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
   add: () => dispatch(contactForm()),
   confirmContact: (name) => dispatch(addContact(name)),
-  loadList: (list) => dispatch(loadContacts(list)),
+  loadList: () => dispatch(loadContacts()),
   loadNotesList: (notes) => dispatch(loadNotes(notes)),
   details: (id) => dispatch(showDetails(id))
 })
