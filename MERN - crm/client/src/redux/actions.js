@@ -7,6 +7,7 @@ export const HIDE_DETAILS = "HIDE_DETAILS";
 
 export const LOGIN_FORM = "LOGIN_FORM";
 export const LOGIN = "LOGIN";
+export const WRONG_LOGIN = "WRONG_LOGIN";
 export const LOGOUT = "LOGOUT";
 
 export const REGISTRATION_FORM = "REGISTRATION_FORM";
@@ -48,6 +49,7 @@ export const contactForm = () => ({type: CONTACT_FORM});
 
 export const loginForm = () => ({type: LOGIN_FORM});
 export const login = (payload) => ({type: LOGIN, payload});
+export const wrongLogin = () => ({type: WRONG_LOGIN});
 export const logout = () => ({type: LOGOUT});
 
 export const registrationForm = () => ({type: REGISTRATION_FORM});

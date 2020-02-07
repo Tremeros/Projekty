@@ -51,16 +51,16 @@ class Details extends React.Component {
             </div>
           </div>
 
-          <div className="notes">
-            <h2>Historia kontaktów</h2>
-            <button onClick={this.addnote}>Dodaj notatkę</button>
-            <div className="notes__list">
-              {this.props.notesList.map((el, index) => {
-                if(el.id == this.state.id) {
-                  return <div key={index} className="notes__list__element"><span>{el.text}</span></div>
-                }
-              })}
-            </div>
+          <div>
+              <section className="stage">
+                  <div id="home" className="div"><p id="homep" className="p">Szczegóły</p></div>
+                  <div className="div" id="about"><p className="p">Kontakty</p>
+                  </div>
+                  <div className="div" id="contact"><p className="p">Notatki</p>
+                  </div>
+                  <div className="div" id="gallery"><p className="p">Transakcje</p>
+                  </div>
+              </section>
           </div>
       </div>
 

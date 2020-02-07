@@ -1,4 +1,4 @@
-import {ADD_CONTACT, DELETE_CONTACT, HIDE_DETAILS, CONTACT_FORM, LOAD_CONTACTS, LOAD_USERS,  LOGIN, LOGOUT, LOGIN_FORM, REGISTRATION_FORM, REGISTRATION,  SHOW_DETAILS, ADD_NOTE, LOAD_NOTES }from "./actions";
+import {ADD_CONTACT, DELETE_CONTACT, HIDE_DETAILS, CONTACT_FORM, LOAD_CONTACTS, LOAD_USERS,  LOGIN, WRONG_LOGIN, LOGOUT, LOGIN_FORM, REGISTRATION_FORM, REGISTRATION,  SHOW_DETAILS, ADD_NOTE, LOAD_NOTES }from "./actions";
 import {combineReducers} from "redux";
 
 
@@ -10,6 +10,7 @@ const initialState = {
   contactDetails: false,
   loginForm: false,
   login: false,
+  loginNotGood: false,
   registryForm: false,
   registration: false,
   newContactForm: false,
@@ -26,10 +27,13 @@ const contacts = (state=initialState, action) => {
     }
 
     case LOGIN:
-    return {...state, loginForm: false, login: true, currentUser: action.payload}
+    return {...state, loginForm: false, login: true, loginNotGood: false, currentUser: action.payload}
+
+    case WRONG_LOGIN:
+    return {...state, loginNotGood: true}
 
     case LOGOUT:
-    return {...state, currentUser: null, login: false, contacts: []}
+    return {...state, currentUser: null, login: false, loginNotGood: false, contacts: []}
 
     case REGISTRATION_FORM:
     return {...state, registryForm: true, loginForm: false}

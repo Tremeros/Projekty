@@ -33,7 +33,7 @@ import RegistryForm from "../containers/RegistrationForm";
      // this.props.loadContactsList();
    }
 
-  
+
 
    render() {
      return (
@@ -44,25 +44,25 @@ import RegistryForm from "../containers/RegistrationForm";
                <div className="label">Menu</div>
                <div className="spacer"></div>
                <Link className="navLink" to="/"><span>Strona główna</span></Link>
-               <Link className="navLink" to="/"><span>O programie</span></Link>
-               <Link className="navLink" to="/"><span>Pomoc</span></Link>
+               <Link className="navLink" to="/contacts"><span>Kontakty</span></Link>
+               <Link className="navLink" to="/stats"><span>Statystyki</span></Link>
+               <Link className="navLink" to="/timetable"><span>Terminarz</span></Link>
+               <Link className="navLink" to="/documents"><span>Dokumenty</span></Link>
+               <Link className="navLink" to="/"><span>Poczta</span></Link>
                <Link onClick={!this.props.logedIn ? this.log : this.logOut} className="navLink login" to="/"><span>{this.props.logedIn ? "Wyloguj" : "Zaloguj"}</span></Link>
-               <Link onClick={this.registration} className="navLink" to="/"><span>Rejestracja</span></Link>
+               
            </div>
          <div className="header">
            <div className="background">
              <div className="headerLine_1"></div>
              <h1>System CRM</h1>
              <div className="headerLine_2"></div>
+             <p className="line-1 anim-typewriter">Animation typewriter style using css steps()</p>
            </div>
          </div>
          <div className="container">
-           <div className="sidebar">
-             <Link className="sidenav" to="/contacts">Kontakty</Link>
-             <Link className="sidenav" to="/stats">Statystyki</Link>
-             <Link className="sidenav" to="/timetable">Terminarz</Link>
-             <Link disabled={true} className="sidenav" to="/documents">Dokumenty</Link>
-           </div>
+
+
            <div className="main">
              <div className="logIn">
                 {this.props.logedIn ? this.props.children : <div>
