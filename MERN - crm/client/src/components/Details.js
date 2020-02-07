@@ -1,6 +1,6 @@
 import React from "react";
 import Main from "./Main";
-import "./components.css";
+import "../sass/App.scss";
 
 class Details extends React.Component {
   constructor(props) {

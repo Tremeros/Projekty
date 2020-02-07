@@ -1,5 +1,5 @@
 import React from "react";
-import '../App.css';
+import '../sass/App.scss';
 import Main from "../containers/Main";
 import Details from "../containers/Details";
 

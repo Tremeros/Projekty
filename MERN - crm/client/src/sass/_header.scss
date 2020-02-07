@@ -1,0 +1,75 @@
+.header {
+  width: 100%;
+  height: 500px;
+  background-image: url("../images/banner1.jpg");
+  position: relative;
+}
+
+.notfound {
+  text-align: center;
+  font-size: 50px;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, $background-gradient-1, $background-gradient-0);
+  text-align: center;
+}
+
+h1 {
+
+		color: #fff;
+		font-size: 82px;
+		/* font-family: "ubuntu"; */
+		text-transform: uppercase;
+		font-weight: 700;
+		/* font-family: "Josefin Sans", sans-serif; */
+		background: linear-gradient(to right, #FFFFFF 10%,  #FFEFBA 90%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 2s linear infinite;
+		display: inline-block;
+	}
+
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+.headerLine_1 {
+  position: absolute;
+  height: 10px;
+  width: 530px;
+  background: #FFEFBA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  left: 654px;
+  top: 50px;
+  border-radius: 10px;
+}
+
+.headerLine_2 {
+  position: absolute;
+  height: 10px;
+  width: 530px;
+  background: #FFEFBA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  left: 654px;
+  bottom: 340px;
+  border-radius: 10px;
+}

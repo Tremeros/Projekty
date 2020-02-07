@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch, Link } from "react-router-dom";
 import { Provider } from "react-redux";
-import './App.css';
+import './sass/App.scss';
 import Main from "./containers/Main";
 import NotFound from "./components/NotFound";
 import Contacts from "./containers/Contacts";

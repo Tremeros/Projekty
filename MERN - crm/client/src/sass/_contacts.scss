@@ -1,0 +1,111 @@
+@import "mixins.scss";
+
+.contacts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+}
+
+input {
+  margin: 5px;
+}
+
+.contactForm span:nth-of-type(2) input {
+  margin-left: 25px;
+}
+
+.contactForm span:nth-of-type(3) input {
+  margin-left: 89px;
+}
+
+.contactForm span:nth-of-type(4) input {
+  margin-left: 60px;
+}
+
+.contactForm span:nth-of-type(5) input {
+  margin-left: 60px;
+}
+
+.contactForm span:nth-of-type(6) input {
+  margin-left: 75px;
+}
+
+.contactForm span:nth-of-type(7) input {
+  margin-left: 69px;
+}
+
+.contactListBar {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  background-color: #483D8B;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contactListBar span {
+  margin-right: 250px;
+  margin-left: 10px;
+}
+
+
+
+.newContact {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    @include btn();
+}
+
+.contactsList {
+  width: 100%;
+}
+
+.contact {
+  width: 96%;
+  height: 50px;
+  @include contact();
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  div{
+    span {
+      font-size: 20px;
+    }
+  }
+}
+
+.contact:hover {
+  background-color: gray;
+}
+
+.contact div {
+  height: 100%;
+  width: 330px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.contact:nth-of-type(2n):hover {
+  background-color: gray;
+}
+.contactName {
+  margin-left: 10px;
+}

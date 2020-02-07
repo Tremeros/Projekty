@@ -1,5 +1,5 @@
 import React from "react";
-import '../App.css';
+import '../sass/App.scss';
 import { HashRouter, Route, Switch, Link } from "react-router-dom";
 import Contacts from "../containers/Contacts";
 import LoginForm from "../containers/LoginForm";
@@ -50,14 +50,14 @@ import RegistryForm from "../containers/RegistrationForm";
                <Link className="navLink" to="/documents"><span>Dokumenty</span></Link>
                <Link className="navLink" to="/"><span>Poczta</span></Link>
                <Link onClick={!this.props.logedIn ? this.log : this.logOut} className="navLink login" to="/"><span>{this.props.logedIn ? "Wyloguj" : "Zaloguj"}</span></Link>
-               
+
            </div>
          <div className="header">
            <div className="background">
              <div className="headerLine_1"></div>
              <h1>System CRM</h1>
              <div className="headerLine_2"></div>
-             <p className="line-1 anim-typewriter">Animation typewriter style using css steps()</p>
+             <p className="line-1 anim-typewriter">Podnieś wyniki sprzedaży z systemem CRM</p>
            </div>
          </div>
          <div className="container">

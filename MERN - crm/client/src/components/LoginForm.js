@@ -1,5 +1,5 @@
 import React from "react";
-import "./components.css";
+import "../sass/App.scss";
 
 
 class LoginForm extends React.Component {
@@ -30,13 +30,14 @@ class LoginForm extends React.Component {
     console.log(this.props.users);
     this.props.users.forEach(el => {
       if(el.login === this.state.login && el.password === this.state.password) {
-        return this.props.confirmLogin(el);
+        this.props.loadList();
+        this.props.confirmLogin(el);
       } else {
         this.props.badLoginDatas();
         this.setState({login: "", password: ""});
       }
     });
-    this.props.wrongLogin && this.props.loadList();
+
   }
 
   onChangeHandleReg = (e) => {
@@ -46,6 +47,9 @@ class LoginForm extends React.Component {
 
   handleNameChangeReg = (e) => {
     e.preventDefault();
+  if(this.state.loginReg === "" || this.state.hasło === "" || this.state.imie === "" || this.state.nazwisko === "" || this.state.nazwa === "" || this.state.stanowisko === "") {
+    this.props.badRegistrationDatas();
+  } else {
     const user = {
       login: this.state.loginReg,
       hasło: this.state.hasło,
@@ -59,6 +63,7 @@ class LoginForm extends React.Component {
     this.setState({userlist: this.props.userList});
     this.setState({loginReg: "", hasło: "", imie: "", nazwisko: "", nazwa: "", stanowisko: ""});
   }
+  }
 
 toggleChecked =(e) => {
 
@@ -70,6 +75,7 @@ toggleChecked =(e) => {
    return (
      <>
      {this.props.wrongLogin && <span style={{color: "red"}}>Podane dane sa nieprawidłowe</span>}
+     {this.props.wrongReg && <span style={{color: "red"}}>Uzupełnij wszystkie wymagane pola</span>}
      <div className="loginContainer">
         <div className="login-wrap">
           <div className="login-html">
