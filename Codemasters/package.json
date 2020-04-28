@@ -10,13 +10,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "pretty-time": "^1.1.0"
+  },
   "devDependencies": {
     "ansi-colors": "^1.1.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "gulp": "^4.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",
